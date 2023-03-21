@@ -1,15 +1,8 @@
 <template>
-  <HomePage msg="Welcome to Your Vue.js + TypeScript App" />
+  <AppHeader />
+  <router-view />
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import HomePage from "./components/Homepage.vue";
-
-export default defineComponent({
-  name: "App",
-  components: {
-    HomePage,
-  },
-});
+<script setup lang="ts">
+import AppHeader from "@/components/AppHeader.vue";
 </script>
