@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomepageVue from "@/components/Homepage.vue";
+import AdminDashboard from "@/components/AdminDashboard.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "home",
     component: HomepageVue,
+  },
+  {
+    path: "/dashboard",
+    name: "AdminDashboard",
+    component: AdminDashboard,
   },
   // {
   //   path: "/about",

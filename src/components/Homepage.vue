@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
     <div
-      class="home-container flex flex-col justify-center items-center h-full bg-black-pearl"
+      class="min-h-home flex flex-col justify-center items-center h-full bg-black-pearl"
     >
       <h1
         class="font-poppins font-semibold text-2xl leading-9 text-center text-white mb-6"
@@ -10,9 +10,14 @@
       </h1>
       <button
         class="bg-blue-lagoon hover:bg-blue-600 text-white font-medium font-poppins py-3 px-5 rounded-lg mb-8 flex items-center"
+        @click="navigateToDashboard"
       >
         To Birdhouses Overview
-        <img src="../assets/img/Icon.svg" alt="Arrow to Left" class="ml-3" />
+        <img
+          src="../assets/img/arrow-right.svg"
+          alt="Arrow to Left"
+          class="ml-3"
+        />
       </button>
     </div>
   </div>
@@ -20,17 +25,20 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useRouter } from "vue-router";
 
 export default defineComponent({
   name: "HomePage",
-  // props: {
-  //   msg: String,
-  // },
+  setup() {
+    const router = useRouter();
+
+    const navigateToDashboard = () => {
+      router.push("/dashboard");
+    };
+
+    return {
+      navigateToDashboard,
+    };
+  },
 });
 </script>
-
-<style scoped>
-.home-container {
-  min-height: calc(100vh - 72px);
-}
-</style>
