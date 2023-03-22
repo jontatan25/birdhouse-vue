@@ -25,14 +25,13 @@ export default defineComponent({
   },
   created() {
     axios
-      .get("http://192.168.0.106:3000/houses")
+      .get("http://192.168.0.106:3000/housesss")
       .then((response) => {
         this.birdhouses = response.data;
-        console.log(response.data);
       })
       .catch((error) => {
         this.error = error;
-        console.log(error);
+        console.log(this.error);
       });
   },
 });
