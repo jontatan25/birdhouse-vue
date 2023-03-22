@@ -1,33 +1,39 @@
 <template>
-  <div class="houses-container pt-8 pl-8">
-    <div class="w-60 h-40 px-6 py-7 bg-black-russian rounded-xl">
-      <h3 class="font-poppins font-semibold text-2xl text-white mb-5">
-        Cool birdhouse
-      </h3>
-      <div class="flex justify-between mb-2">
-        <img src="../assets/img/location.svg" alt="location" />
-        <span class="text-white font-poppins font-normal"
-          >(7.160850, 16.072736)</span
-        >
-      </div>
-      <div class="flex">
-        <div class="flex justify-between w-10 mr-3">
-          <img src="../assets/img/pets.svg" alt="location" />
-          <span class="text-white font-poppins font-normal">3</span>
-        </div>
-        <div class="flex justify-between w-9">
-          <img src="../assets/img/eggs.svg" alt="location" />
-          <span class="text-white font-poppins">2</span>
-        </div>
-      </div>
+  <div class="flex pt-8 px-8 flex-wrap gap-8">
+    <div v-for="birdhouse in birdhouses" :key="birdhouse.id">
+      <HouseItem :birdhouse="birdhouse" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { BirdHouse } from "@/types/birdhouse";
+import HouseItem from "@/views/HouseItem.vue";
+import axios from "axios";
 
 export default defineComponent({
   name: "HousesList",
+  components: {
+    HouseItem,
+  },
+  data() {
+    return {
+      birdhouses: [] as BirdHouse[],
+      error: null,
+    };
+  },
+  created() {
+    axios
+      .get("http://192.168.0.106:3000/houses")
+      .then((response) => {
+        this.birdhouses = response.data;
+        console.log(response.data);
+      })
+      .catch((error) => {
+        this.error = error;
+        console.log(error);
+      });
+  },
 });
 </script>

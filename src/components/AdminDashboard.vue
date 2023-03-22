@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-home bg-black-pearl">
+  <div class="min-h-home w-full bg-black-pearl">
     <div class="container-dashboard flex">
       <router-view name="AdminSidebar"></router-view>
       <div class="container-component">

@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-20 bg-black-russian">
+  <nav class="w-20 min-w-20 px-7 bg-black-russian">
     <ul class="flex flex-col items-center pt-5">
       <li>
         <RouterLink to="/">
