@@ -9,7 +9,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { BirdHouse } from "@/types/birdhouse";
-import HouseItem from "@/views/HouseItem.vue";
+import HouseItem from "@/components/HouseItem.vue";
 import axios from "axios";
 
 export default defineComponent({

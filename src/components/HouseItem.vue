@@ -32,17 +32,9 @@ export default defineComponent({
   name: "HouseItem",
   props: {
     birdhouse: {
-      type: Object,
+      type: Object as () => BirdHouse,
       required: true,
     },
-  },
-  setup(props) {
-    defineProps({
-      birdhouse: {
-        type: Object as () => BirdHouse,
-        required: true,
-      },
-    });
   },
 });
 </script>
