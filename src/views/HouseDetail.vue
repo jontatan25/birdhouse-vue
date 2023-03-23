@@ -29,7 +29,7 @@ export default defineComponent({
     return {
       birdhouse: {} as BirdHouse,
       error: null,
-      showHistory: true,
+      showHistory: false,
     };
   },
   async created() {
