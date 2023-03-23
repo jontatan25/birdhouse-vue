@@ -1,12 +1,12 @@
 <template>
   <div class="min-h-home w-full bg-black-pearl">
-    <div class="container-dashboard flex">
+    <div class="min-h-home flex">
       <router-view name="AdminSidebar"></router-view>
-      <div class="container-component pt-8 px-8 w-full">
+      <div class="min-h-home w-full overflow-scroll overflow-x-hidden">
         <router-view name="content"></router-view>
       </div>
     </div>
-    <div class="pages-container h-16 text-white bg-black-russian">FOOTER</div>
+    <!-- <div class="pages-container h-16 text-white bg-black-russian">FOOTER</div> -->
   </div>
 </template>
 
@@ -25,9 +25,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style scoped>
-.container-dashboard {
-  height: calc(100vh - 136px);
-}
-</style>
