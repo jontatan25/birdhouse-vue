@@ -14,11 +14,12 @@
       </div>
     </div>
     <div class="flex">
-      <span
-        class="text-blue-lagoon font-poppins font-normal text-base border-b-2 border-b-blue-lagoon pb-3 mr-8"
-        >Overview</span
-      >
-      <span class="font-poppins font-normal text-base pb-3">Graph</span>
+      <button :class="historyClass" @click="() => toggleHistory(true)">
+        Overview
+      </button>
+      <button :class="overviewClass" @click="() => toggleHistory(false)">
+        Graph
+      </button>
     </div>
   </div>
 </template>
@@ -26,7 +27,22 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
+const classes = {
+  activeTab: "font-poppins font-normal text-base pb-3 mr-8",
+  inactiveTab:
+    "text-blue-lagoon font-poppins font-normal text-base border-b-2 border-b-blue-lagoon pb-3 mr-8",
+};
+
 export default defineComponent({
   name: "HouseDetailHeader",
+  props: ["showHistory", "toggleHistory"],
+  computed: {
+    overviewClass(): string {
+      return this.showHistory ? classes.activeTab : classes.inactiveTab;
+    },
+    historyClass(): string {
+      return this.showHistory ? classes.inactiveTab : classes.activeTab;
+    },
+  },
 });
 </script>

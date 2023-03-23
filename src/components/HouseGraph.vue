@@ -1,5 +1,5 @@
 <template>
-  <div class="h-2/3">
+  <div class="flex justify-center h-4/5 w-full">
     <canvas ref="chart"></canvas>
   </div>
 </template>
@@ -65,6 +65,8 @@ export default defineComponent({
       };
 
       const options = {
+        responsive: true,
+        maintainAspectRatio: false,
         scales: {
           x: {
             title: {
@@ -86,8 +88,9 @@ export default defineComponent({
           },
         },
         plugins: {
+          //displays color and name Info
           legend: {
-            display: false,
+            display: true,
           },
         },
       };
@@ -102,9 +105,9 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<!-- <style scoped>
 canvas {
   max-width: 100%;
   height: auto;
 }
-</style>
+</style> -->

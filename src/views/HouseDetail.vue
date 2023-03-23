@@ -1,5 +1,9 @@
 <template>
-  <HouseDetailHeader />
+  <HouseDetailHeader
+    v-if="birdhouse"
+    :showHistory="showHistory"
+    :toggleHistory="toggleHistory"
+  />
   <HouseHistory
     v-if="birdhouse && showHistory"
     :residences="birdhouse.residences"
@@ -29,7 +33,7 @@ export default defineComponent({
     return {
       birdhouse: {} as BirdHouse,
       error: null,
-      showHistory: false,
+      showHistory: true,
     };
   },
   async created() {
@@ -44,6 +48,11 @@ export default defineComponent({
         this.error = error;
         console.log(error);
       });
+  },
+  methods: {
+    toggleHistory(value: boolean) {
+      this.showHistory = value;
+    },
   },
 });
 </script>
