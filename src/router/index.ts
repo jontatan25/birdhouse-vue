@@ -4,7 +4,6 @@ import AdminSidebar from "@/components/AdminSidebar.vue";
 import AdminDashboard from "@/components/AdminDashboard.vue";
 import HousesList from "@/views/HousesList.vue";
 import HouseDetail from "@/views/HouseDetail.vue";
-
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
