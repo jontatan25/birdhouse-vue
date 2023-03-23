@@ -14,10 +14,10 @@
       </div>
     </div>
     <div class="flex">
-      <button :class="historyClass" @click="() => toggleHistory(true)">
+      <button :class="overviewClass" @click="() => toggleHistory(true)">
         Overview
       </button>
-      <button :class="overviewClass" @click="() => toggleHistory(false)">
+      <button :class="historyClass" @click="() => toggleHistory(false)">
         Graph
       </button>
     </div>
@@ -38,10 +38,10 @@ export default defineComponent({
   props: ["showHistory", "toggleHistory"],
   computed: {
     overviewClass(): string {
-      return this.showHistory ? classes.activeTab : classes.inactiveTab;
+      return this.showHistory ? classes.inactiveTab : classes.activeTab;
     },
     historyClass(): string {
-      return this.showHistory ? classes.inactiveTab : classes.activeTab;
+      return this.showHistory ? classes.activeTab : classes.inactiveTab;
     },
   },
 });
