@@ -2,7 +2,7 @@
   <div class="min-h-home w-full bg-black-pearl">
     <div class="container-dashboard flex">
       <router-view name="AdminSidebar"></router-view>
-      <div class="container-component">
+      <div class="container-component pt-8 px-8 w-full">
         <router-view name="content"></router-view>
       </div>
     </div>

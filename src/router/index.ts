@@ -3,7 +3,7 @@ import HomepageVue from "@/components/Homepage.vue";
 import AdminSidebar from "@/components/AdminSidebar.vue";
 import AdminDashboard from "@/components/AdminDashboard.vue";
 import HousesList from "@/views/HousesList.vue";
-import HouseDetailVue from "@/views/HouseDetail.vue";
+import HouseDetail from "@/views/HouseDetail.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -26,7 +26,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: "house/:id",
         components: {
-          content: HouseDetailVue,
+          content: HouseDetail,
           AdminSidebar: AdminSidebar,
         },
       },

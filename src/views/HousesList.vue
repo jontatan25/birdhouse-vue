@@ -1,5 +1,5 @@
 <template>
-  <div class="flex pt-8 px-8 flex-wrap gap-8">
+  <div class="flex flex-wrap gap-8">
     <div v-for="birdhouse in birdhouses" :key="birdhouse.id">
       <HouseItem :birdhouse="birdhouse" />
     </div>
@@ -25,7 +25,7 @@ export default defineComponent({
   },
   created() {
     axios
-      .get("http://192.168.0.106:3000/housesss")
+      .get("http://192.168.0.106:3000/houses")
       .then((response) => {
         this.birdhouses = response.data;
       })
