@@ -9,7 +9,7 @@
       <div class="flex justify-between items-end w-48 h-6">
         <img class="h-4" src="../assets/img/location.svg" alt="location" />
         <span class="text-white font-poppins font-medium leading-none"
-          >(7.160850, 16.072736)</span
+          >({{ birdhouse.latitude }},{{ birdhouse.longitude }})</span
         >
       </div>
     </div>
@@ -35,7 +35,7 @@ const classes = {
 
 export default defineComponent({
   name: "HouseDetailHeader",
-  props: ["showHistory", "toggleHistory"],
+  props: ["showHistory", "toggleHistory", "birdhouse"],
   computed: {
     overviewClass(): string {
       return this.showHistory ? classes.inactiveTab : classes.activeTab;

@@ -38,7 +38,7 @@ export default defineComponent({
         //Formatting date from the API
         labels: this.residences.map((residency) => {
           const date = new Date(residency.date);
-          return date.toLocaleDateString("en-US", {
+          return date.toLocaleDateString("en-GB", {
             year: "numeric",
             month: "2-digit",
             day: "2-digit",

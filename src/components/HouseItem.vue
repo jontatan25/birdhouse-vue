@@ -7,7 +7,7 @@
       <div class="flex justify-between mb-2">
         <img src="../assets/img/location.svg" alt="location" />
         <span class="text-white font-poppins font-normal"
-          >({{ birdhouse.longitude }},{{ birdhouse.latitude }})</span
+          >({{ birdhouse.latitude }},{{ birdhouse.longitude }})</span
         >
       </div>
       <div class="flex">

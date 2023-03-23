@@ -1,6 +1,7 @@
 <template>
   <HouseDetailHeader
     v-if="birdhouse"
+    :birdhouse="birdhouse"
     :showHistory="showHistory"
     :toggleHistory="toggleHistory"
   />
