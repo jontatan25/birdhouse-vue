@@ -1,7 +1,7 @@
 <template>
-  <div class="details-container">
+  <div class="min-h-details p-8">
     <div
-      v-for="residence in residences"
+      v-for="residence in displayedResidences"
       :key="residence.id"
       class="flex flex-col"
     >
@@ -26,6 +26,34 @@
       </div>
     </div>
   </div>
+  <div class="flex justify-center h-16 bg-black-russian w-full">
+    <button
+      class="font-poppins font-medium text-2xl text-white mr-7"
+      :disabled="currentPage === 1"
+      @click="prevPage"
+    >
+      <img src="@/assets/img/arrow-prev.svg" alt="arrow to go back" />
+    </button>
+    <div class="flex items-center">
+      <button
+        :class="{ 'bg-blue-lagoon text-opacity-100': currentPage === page }"
+        class="font-poppins font-medium text-2xl text-white text-opacity-40 mx-1 px-3 h-10 rounded-md hover:text-opacity-100 hover:bg-gray-600"
+        v-for="page in totalPages"
+        :key="page"
+        :disabled="currentPage === page"
+        @click="() => goToPage(page)"
+      >
+        {{ page }}
+      </button>
+    </div>
+    <button
+      class="ml-7"
+      :disabled="currentPage === totalPages"
+      @click="nextPage"
+    >
+      <img src="@/assets/img/arrow-next.svg" alt="arrow to go back" />
+    </button>
+  </div>
 </template>
 
 <script lang="ts">
@@ -40,6 +68,23 @@ export default defineComponent({
       required: true,
     },
   },
+  data() {
+    return {
+      error: null,
+      itemsPerPage: 6,
+      currentPage: 1,
+    };
+  },
+  computed: {
+    totalPages(): number {
+      return Math.ceil(this.residences.length / this.itemsPerPage);
+    },
+    displayedResidences(): Residency[] {
+      const start = (this.currentPage - 1) * this.itemsPerPage;
+      const end = start + this.itemsPerPage;
+      return this.residences.slice(start, end);
+    },
+  },
   methods: {
     formatDate(date: Date): string {
       const formattedDate = new Date(date);
@@ -48,6 +93,18 @@ export default defineComponent({
         month: "2-digit",
         year: "2-digit",
       });
+    },
+    nextPage() {
+      this.currentPage++;
+      window.scrollTo(0, 0);
+    },
+    prevPage() {
+      this.currentPage--;
+      window.scrollTo(0, 0);
+    },
+    goToPage(page: number) {
+      this.currentPage = page;
+      window.scrollTo(0, 0);
     },
   },
 });

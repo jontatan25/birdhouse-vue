@@ -2,11 +2,12 @@
   <div class="min-h-home w-full bg-black-pearl">
     <div class="min-h-home flex">
       <router-view name="AdminSidebar"></router-view>
-      <div class="min-h-home w-full overflow-scroll overflow-x-hidden">
+      <div
+        class="min-h-home w-full overflow-scroll overflow-x-hidden overflow-y-hidden"
+      >
         <router-view name="content"></router-view>
       </div>
     </div>
-    <!-- <div class="pages-container h-16 text-white bg-black-russian">FOOTER</div> -->
   </div>
 </template>
 

@@ -1,18 +1,22 @@
 <template>
-  <HouseDetailHeader
-    v-if="birdhouse"
-    :birdhouse="birdhouse"
-    :showHistory="showHistory"
-    :toggleHistory="toggleHistory"
-  />
-  <HouseHistory
-    v-if="birdhouse && showHistory"
-    :residences="birdhouse.residences"
-  />
-  <HouseGraph
-    v-else-if="birdhouse && !showHistory"
-    :residences="birdhouse.residences"
-  />
+  <div v-if="!loading">
+    <div class="min-h-home">
+      <HouseDetailHeader
+        v-if="birdhouse"
+        :birdhouse="birdhouse"
+        :showHistory="showHistory"
+        :toggleHistory="toggleHistory"
+      />
+      <HouseHistory
+        v-if="birdhouse && showHistory"
+        :residences="birdhouse.residences"
+      />
+      <HouseGraph
+        v-else-if="birdhouse && !showHistory"
+        :residences="birdhouse.residences"
+      />
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -22,6 +26,7 @@ import axios from "axios";
 import HouseHistory from "../components/HouseHistory.vue";
 import HouseDetailHeader from "@/components/HouseDetailHeader.vue";
 import HouseGraph from "@/components/HouseGraph.vue";
+import NProgress from "nprogress";
 
 export default defineComponent({
   name: "HousesList",
@@ -33,22 +38,27 @@ export default defineComponent({
   data() {
     return {
       birdhouse: {} as BirdHouse,
-      error: null,
+      loading: true,
+      error: null as any,
       showHistory: true,
     };
   },
   async created() {
+    NProgress.start();
     // const sampleID = "a44d22df-bf81-41eb-99c5-d6e2aa6bca3c";
-    const houseId = this.$route.params.id;
-    axios
-      .get(`http://192.168.0.106:3000/houses/${houseId}`)
-      .then((response) => {
-        this.birdhouse = response.data;
-      })
-      .catch((error) => {
-        this.error = error;
-        console.log(error);
-      });
+    try {
+      const houseId = this.$route.params.id;
+      const response = await axios.get(
+        `http://192.168.0.103:3000/houses/${houseId}`
+      );
+      this.birdhouse = response.data;
+    } catch (error) {
+      this.error = error;
+      console.log(error);
+    } finally {
+      this.loading = false;
+      NProgress.done();
+    }
   },
   methods: {
     toggleHistory(value: boolean) {

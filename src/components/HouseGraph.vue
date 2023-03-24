@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center h-4/5 w-full">
+  <div class="min-h-details flex justify-center w-full px-8">
     <canvas ref="chart"></canvas>
   </div>
 </template>
@@ -104,10 +104,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<!-- <style scoped>
-canvas {
-  max-width: 100%;
-  height: auto;
-}
-</style> -->

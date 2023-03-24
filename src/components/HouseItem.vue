@@ -1,6 +1,9 @@
 <template>
-  <router-link :to="'/dashboard/house/' + birdhouse.id" class="house-item-link">
-    <div class="house-item w-60 h-40 px-6 py-7 bg-black-russian rounded-xl">
+  <div class="house-item w-60 h-40 px-6 py-7 bg-black-russian rounded-xl">
+    <router-link
+      :to="'/dashboard/house/' + birdhouse.id"
+      class="house-item-link"
+    >
       <h3 class="font-poppins font-semibold text-2xl text-white mb-5">
         Cool birdhouse
       </h3>
@@ -22,8 +25,8 @@
           <span class="text-white font-poppins">{{ birdhouse.eggs }}</span>
         </div>
       </div>
-    </div>
-  </router-link>
+    </router-link>
+  </div>
 </template>
 
 <script lang="ts">

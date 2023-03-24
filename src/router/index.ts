@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import HomepageVue from "@/components/Homepage.vue";
+import HomepageVue from "@/views/Homepage.vue";
 import AdminSidebar from "@/components/AdminSidebar.vue";
 import AdminDashboard from "@/components/AdminDashboard.vue";
 import HousesList from "@/views/HousesList.vue";
@@ -27,6 +27,9 @@ const routes: Array<RouteRecordRaw> = [
         components: {
           content: HouseDetail,
           AdminSidebar: AdminSidebar,
+        },
+        props: {
+          content: true,
         },
       },
     ],

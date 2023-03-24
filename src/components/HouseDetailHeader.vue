@@ -1,25 +1,31 @@
 <template>
-  <div
-    class="flex flex-col px-6 pt-7 bg-black-russian text-white w-full rounded-xl mb-6"
-  >
-    <div class="flex justify-between w-full h-14">
-      <h2 class="font-poppins font-semibold text-2xl text-white">
-        Cool birdhouse
-      </h2>
-      <div class="flex justify-between items-end w-48 h-6">
-        <img class="h-4" src="../assets/img/location.svg" alt="location" />
-        <span class="text-white font-poppins font-medium leading-none"
-          >({{ birdhouse.latitude }},{{ birdhouse.longitude }})</span
-        >
+  <div class="px-8 pt-8">
+    <div
+      class="flex flex-col px-6 pt-7 bg-black-russian text-white w-full rounded-xl"
+    >
+      <div class="flex justify-between w-full h-14">
+        <h2 class="font-poppins font-semibold text-2xl text-white">
+          Cool birdhouse
+        </h2>
+        <div class="flex justify-between items-end h-6">
+          <img
+            class="h-4 mr-3"
+            src="../assets/img/location.svg"
+            alt="location"
+          />
+          <span class="text-white font-poppins font-medium leading-none"
+            >({{ birdhouse.latitude }},{{ birdhouse.longitude }})</span
+          >
+        </div>
       </div>
-    </div>
-    <div class="flex">
-      <button :class="overviewClass" @click="() => toggleHistory(true)">
-        Overview
-      </button>
-      <button :class="historyClass" @click="() => toggleHistory(false)">
-        Graph
-      </button>
+      <div class="flex">
+        <button :class="overviewClass" @click="() => toggleHistory(true)">
+          Overview
+        </button>
+        <button :class="historyClass" @click="() => toggleHistory(false)">
+          Graph
+        </button>
+      </div>
     </div>
   </div>
 </template>

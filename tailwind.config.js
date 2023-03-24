@@ -10,6 +10,7 @@ module.exports = {
       },
       minHeight: {
         home: "calc(100vh - 72px)",
+        details: "calc(100vh - 289.6px)",
       },
     },
     fontFamily: {
