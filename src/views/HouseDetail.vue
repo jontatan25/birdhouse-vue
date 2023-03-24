@@ -45,7 +45,6 @@ export default defineComponent({
   },
   async created() {
     NProgress.start();
-    // const sampleID = "a44d22df-bf81-41eb-99c5-d6e2aa6bca3c";
     try {
       const houseId = this.$route.params.id;
       const response = await axios.get(

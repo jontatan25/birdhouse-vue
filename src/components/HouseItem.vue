@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, defineProps } from "vue";
+import { defineComponent } from "vue";
 import { BirdHouse } from "@/types/birdhouse";
 
 export default defineComponent({

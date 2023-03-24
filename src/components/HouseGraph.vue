@@ -95,7 +95,7 @@ export default defineComponent({
         },
       };
 
-      const chart = new Chart(this.$refs.chart as ChartItem, {
+      new Chart(this.$refs.chart as ChartItem, {
         type: "line",
         data,
         options,
