@@ -20,7 +20,7 @@
 
 </p>
 
-![screenshot](https://iili.io/HN75NY7.gif)
+![screenshot](https://iili.io/HNaUMoF.gif)
 
 ## How To Use
 
@@ -74,7 +74,7 @@ $ npm serve
 19. time to make the docs. hmmm found a template for it. looks nice. I will use one template for both repositories. But wait! the shockbyte logo thing still  in my head. What if .... I make my own logo?
 
 20. Take the reference of the logo that has the colors of the front end app. and USE AI to  Edit it , try,error,try,error, B oom! I got something really nice it even has the Birdhouse on it lol !! but the resolution is not that good and has some errors on it. Fixable. AI rules!!
-21. Photoshop. remove the defects.  Upscale the image with AI and use it everywhere. also lets convert it to an icon that can be usable as favicon in the front end. lets also add the word "API" to the logo and use it on the Backend README.
+21. Photoshop. remove the defects.  Upscale the image with AI and use it everywhere. also lets convert it to an icon that can be usable as favicon in the front end. lets also add the word "API" to the logo and use it on the Backend README. host it and use it.
 22. Make a video > Video to PNG > use it on the README.
 23. Done. Thank you for reading!! I really appreciate it. It was really cool to work on this project while improving my coding skills.
 
