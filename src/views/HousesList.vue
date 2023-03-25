@@ -1,6 +1,15 @@
 <template>
   <div v-if="!loading">
     <div
+      v-if="!displayedBirdhouses.length"
+      class="min-h-home flex w-full justify-center items-center"
+    >
+      <p class="font-poppins font-medium text-2xl text-white m-12">
+        No BirdHouses added yet.
+      </p>
+    </div>
+    <div
+      v-if="displayedBirdhouses.length"
       class="min-h-home flex flex-col w-full justify-between overflow-scroll overflow-x-hidden overflow-y-hidden"
     >
       <div class="flex flex-wrap gap-8 p-7">
@@ -20,8 +29,13 @@
         </button>
         <div class="flex items-center">
           <button
-            :class="{ 'bg-blue-lagoon text-opacity-100': currentPage === page }"
-            class="font-poppins font-medium text-2xl text-white text-opacity-40 mx-1 px-3 h-10 rounded-md hover:text-opacity-100 hover:bg-gray-600"
+            :class="{
+              'bg-blue-lagoon hover:bg-blue-lagoon text-white text-opacity-100':
+                currentPage === page,
+              'text-white': currentPage === page,
+              'text-gray-500': currentPage !== page,
+            }"
+            class="font-poppins font-medium text-2xl mx-1 px-3 h-10 rounded-md hover:text-white hover:bg-gray-600 min-w-[40px]"
             v-for="page in totalPages"
             :key="page"
             :disabled="currentPage === page"

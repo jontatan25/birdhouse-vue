@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-details flex justify-center w-full px-8">
+  <div class="min-h-details flex justify-center w-full px-8 pt-8">
     <canvas ref="chart"></canvas>
   </div>
 </template>

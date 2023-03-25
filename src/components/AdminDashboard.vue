@@ -13,16 +13,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-// import DashboardContent from "./DashboardContent.vue";
-// import HousesList from "@/views/HousesList.vue";
-// import AdminSidebar from "./AdminAdminSidebar.vue";
 
 export default defineComponent({
   name: "AdminDashboard",
-  components: {
-    // DashboardContent,
-    // HousesList,
-    // AdminSidebar,
-  },
 });
 </script>
