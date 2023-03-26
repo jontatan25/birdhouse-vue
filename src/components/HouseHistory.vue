@@ -43,7 +43,8 @@
     </div>
     <div class="flex justify-center h-16 bg-black-russian w-full">
       <button
-        class="font-poppins font-medium text-2xl text-white mr-7"
+        class="btn-pag mr-7"
+        v-show="currentPage !== 1"
         :disabled="currentPage === 1"
         @click="prevPage"
       >
@@ -51,8 +52,11 @@
       </button>
       <div class="flex items-center">
         <button
-          :class="{ 'bg-blue-lagoon text-opacity-100': currentPage === page }"
-          class="font-poppins font-medium text-2xl text-white text-opacity-40 mx-1 px-3 h-10 rounded-md hover:text-opacity-100 hover:bg-gray-600"
+          :class="{
+            'bg-blue-lagoon text-opacity-100 text-white ': currentPage === page,
+            'text-gray-500  hover:bg-gray-600': currentPage !== page,
+          }"
+          class="font-poppins font-medium text-2xl mx-1 px-3 h-10 rounded-md hover:text-white min-w-[40px]"
           v-for="page in totalPages"
           :key="page"
           :disabled="currentPage === page"
@@ -62,7 +66,8 @@
         </button>
       </div>
       <button
-        class="ml-7"
+        v-show="currentPage !== totalPages"
+        class="btn-pag ml-7"
         :disabled="currentPage === totalPages"
         @click="nextPage"
       >

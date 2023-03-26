@@ -42,13 +42,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style>
-.btn-home {
-  transition: all 0.3s ease-in-out;
-}
-.btn-home:hover {
-  scale: 1.05;
-  transition: all 0.3s ease-in-out;
-}
-</style>

@@ -6,3 +6,19 @@
 @tailwind components;
 
 @tailwind utilities;
+
+
+.btn-home {
+  transition: all 0.3s ease-in-out;
+}
+.btn-home:hover {
+  scale: 1.05;
+  transition: all 0.3s ease-in-out;
+}
+.btn-pag {
+  transition: all 0.3s ease-in-out;
+}
+.btn-pag:hover {
+  scale: 1.4;
+  transition: all 0.3s ease-in-out;
+}
