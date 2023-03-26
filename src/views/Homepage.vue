@@ -9,7 +9,7 @@
         Home page
       </h1>
       <button
-        class="bg-blue-lagoon hover:bg-blue-600 text-white font-medium font-poppins py-3 px-5 rounded-lg mb-8 flex items-center"
+        class="btn-home bg-blue-lagoon hover:bg-blue-600 text-white font-medium font-poppins py-3 px-5 rounded-lg mb-8 flex items-center"
         @click="navigateToDashboard"
       >
         To Birdhouses Overview
@@ -42,3 +42,13 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+.btn-home {
+  transition: all 0.3s ease-in-out;
+}
+.btn-home:hover {
+  scale: 1.05;
+  transition: all 0.3s ease-in-out;
+}
+</style>

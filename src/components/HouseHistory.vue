@@ -93,9 +93,15 @@ export default defineComponent({
   },
   computed: {
     totalPages(): number {
+      if (!this.residences) {
+        return 0;
+      }
       return Math.ceil(this.residences.length / this.itemsPerPage);
     },
     displayedResidences(): Residency[] {
+      if (!this.residences) {
+        return [];
+      }
       const start = (this.currentPage - 1) * this.itemsPerPage;
       const end = start + this.itemsPerPage;
       return this.residences.slice(start, end);

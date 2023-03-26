@@ -4,6 +4,7 @@ import AdminSidebar from "@/components/AdminSidebar.vue";
 import AdminDashboard from "@/components/AdminDashboard.vue";
 import HousesList from "@/views/HousesList.vue";
 import HouseDetail from "@/views/HouseDetail.vue";
+import NotFound from "@/views/NotFound.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -38,6 +39,17 @@ const routes: Array<RouteRecordRaw> = [
     path: "/houses-list",
     name: "houses-list",
     component: HousesList,
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: "NotFound",
+    component: NotFound,
+  },
+  {
+    path: "/404/:resource",
+    name: "404Resource",
+    component: NotFound,
+    props: true,
   },
 ];
 

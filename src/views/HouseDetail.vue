@@ -39,7 +39,7 @@ export default defineComponent({
     return {
       birdhouse: {} as BirdHouse,
       loading: true,
-      error: null as any,
+      error: null,
       showHistory: true,
     };
   },
@@ -48,12 +48,16 @@ export default defineComponent({
     try {
       const houseId = this.$route.params.id;
       const response = await axios.get(
-        `http://192.168.0.103:3000/houses/${houseId}`
+        `http://192.168.0.104:3000/houses/${houseId}`
       );
       this.birdhouse = response.data;
-    } catch (error) {
+    } catch (error: any) {
       this.error = error;
       console.log(error);
+      this.$router.push({
+        name: "404Resource",
+        params: { resource: "Birdhouse" },
+      });
     } finally {
       this.loading = false;
       NProgress.done();

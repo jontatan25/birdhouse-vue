@@ -80,7 +80,7 @@ export default defineComponent({
   async created() {
     NProgress.start();
     try {
-      const response = await axios.get(`http://192.168.0.103:3000/houses`);
+      const response = await axios.get(`http://192.168.0.104:3000/houses`);
       this.birdhouses = response.data;
     } catch (error: any) {
       this.error = error;
