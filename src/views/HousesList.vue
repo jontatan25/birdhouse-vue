@@ -82,7 +82,8 @@ export default defineComponent({
     NProgress.start();
     try {
       const API_URL =
-        process.env.VUE_APP_API_BASE_UR || "https://birdhouse-api.onrender.com";
+        process.env.VUE_APP_LOCAL_BASE_URL ||
+        "https://birdhouse-api.onrender.com";
       const response = await axios.get(`${API_URL}/houses`);
       this.birdhouses = response.data;
     } catch (error: any) {
