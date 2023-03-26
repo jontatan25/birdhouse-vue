@@ -47,9 +47,9 @@ export default defineComponent({
     NProgress.start();
     try {
       const houseId = this.$route.params.id;
-      const response = await axios.get(
-        `http://192.168.0.104:3000/houses/${houseId}`
-      );
+      const API_URL =
+        process.env.VUE_APP_API_BASE_UR || "https://birdhouse-api.onrender.com";
+      const response = await axios.get(`${API_URL}/houses/${houseId}`);
       this.birdhouse = response.data;
     } catch (error: any) {
       this.error = error;

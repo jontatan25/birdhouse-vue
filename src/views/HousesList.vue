@@ -81,7 +81,9 @@ export default defineComponent({
   async created() {
     NProgress.start();
     try {
-      const response = await axios.get(`http://192.168.0.104:3000/houses`);
+      const API_URL =
+        process.env.VUE_APP_API_BASE_UR || "https://birdhouse-api.onrender.com";
+      const response = await axios.get(`${API_URL}/houses`);
       this.birdhouses = response.data;
     } catch (error: any) {
       this.error = error;
