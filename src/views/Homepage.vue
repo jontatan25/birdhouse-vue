@@ -13,11 +13,22 @@
         @click="navigateToDashboard"
       >
         To Birdhouses Overview
-        <img
-          src="../assets/img/arrow-right.svg"
-          alt="Arrow to Left"
+        <svg
           class="ml-3"
-        />
+          width="20"
+          height="17"
+          viewBox="0 0 20 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 1.5L19 8.5M19 8.5L12 15.5M19 8.5L1 8.5"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </button>
     </div>
   </div>

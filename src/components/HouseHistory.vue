@@ -43,7 +43,7 @@
     </div>
     <div class="flex justify-center h-16 bg-black-russian w-full">
       <button
-        class="btn-pag mr-7"
+        class="btn-pag mr-5 px-1"
         v-show="currentPage !== 1"
         :disabled="currentPage === 1"
         @click="prevPage"
@@ -67,7 +67,7 @@
       </div>
       <button
         v-show="currentPage !== totalPages"
-        class="btn-pag ml-7"
+        class="btn-pag ml-5 px-1"
         :disabled="currentPage === totalPages"
         @click="nextPage"
       >
